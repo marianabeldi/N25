@@ -174,7 +174,7 @@ main {
     object-fit: cover;
     display: block;
     mask: url("https://raw.githubusercontent.com/marianabeldi/N25/refs/heads/main/demo3/imgs/mask-pic.png") 30% 40% / 130% no-repeat;
-    -webkit-mask: url("https://marianabeldi.github.io/N25/demo3/imgs/mask-pic.png") 30% 40% / 130% no-repeat;
+    -webkit-mask: url("https://marianabeldi.github.io/N25/demo2/imgs/mask-pic.png") 30% 40% / 130% no-repeat;
   transition: mask-size 0.75s ease-in-out;
   transition-delay: 0.25s;
 }
