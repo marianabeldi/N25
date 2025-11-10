@@ -1,0 +1,629 @@
+@font-face {
+    font-family: "FlowersKingdom";
+    src: url('/fonts/FlowersKingdom.woff') format('woff'),
+        url('/fonts/FlowersKingdom.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --bg-color: #2f362f;
+    --blue: #3171a0;
+    --cream: #fbe7d9;
+    --green: #4c9153;
+    --orange: #e69a3b;
+    --pink: #e786a7;
+    --red: #d9514a;
+    --violet: #76417c;
+    --yellow: #f5bc41;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+
+}
+body {
+    background-color: var(--bg-color);
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+body:has(a:hover) .cursor {
+  scale: 2;
+  background-color: var(--yellow);
+  border: 2px solid var(--bg-color);
+  opacity: 0.8;
+}
+
+.cursor {
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+
+h1, h2, h3 {
+    font-family: FlowersKingdom, "Flowers Kingdom", sans-serif;
+}
+h1 {
+    font-size: 5.5rem;
+    color: var(--cream);
+    line-height: 2.2;
+    margin: 1rem auto 0;
+    text-shadow: -2px -2px 0 var(--bg-color), 2px -2px 0 var(--bg-color), -2px 2px 0 var(--bg-color), 2px 2px 0 var(--bg-color);
+    padding: 2rem 0 0;
+    text-box-trim: trim-end;
+
+}
+h1 small {
+    display: block;
+    color: var(--orange);
+    text-shadow: -2px -2px 0 var(--bg-color), 2px -2px 0 var(--bg-color), -2px 2px 0 var(--bg-color), 2px 2px 0 var(--bg-color);
+}
+
+.intro {
+    position: absolute;
+    inset: 5% 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.intro .fecha {
+    background-color: var(--orange);
+    border: 2px solid var(--bg-color);
+    border-radius: .5rem;
+    color: var(--bg-color);
+    font-family: FlowersKingdom, "Flowers Kingdom", sans-serif;
+    font-size: 1.2rem;
+    padding: 2rem 1rem .7rem;
+    rotate: 6deg;
+    margin: 0 0 -3rem;
+    z-index: 1;
+}
+
+.intro-p {
+    background-color: var(--blue);
+    border: 2px solid var(--bg-color);
+    border-radius: 2rem;
+    color: var(--cream);
+    font-size: 1.8rem;
+    line-height: 1;
+    margin: 0;
+    padding: 1.5rem 2rem;
+    width: max-content;
+}
+.intro .btn {
+    margin: 0;
+}
+
+.btn {
+    background-color: var(--yellow);
+    border: 2px solid var(--bg-color);
+    border-radius: 1rem;
+    color: var(--bg-color);
+    cursor: pointer;
+    font-family: FlowersKingdom, "Flowers Kingdom", sans-serif;
+    font-size: 1.2rem;
+    padding: 2.5rem 2rem 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-box-trim: trim-both;
+}
+
+nav {
+    background-color: var(--bg-color);
+    position: sticky;
+    top: 0;
+    text-decoration: none;
+    z-index: 1;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    margin: 0;
+}
+nav ul li {
+    list-style: none;
+}
+nav a {
+    color: var(--yellow);
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 2rem;
+}
+nav a:hover {
+    color: var(--cream);
+    text-decoration: underline;
+}   
+header {
+    background-color: var(--bg-color);
+    display: grid;
+    position: relative;
+}
+
+#arcoiris, #piso, #hongo1, #hongo2, #tulipanes {
+}
+
+
+
+#arco > path{
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: scaleArco 2s ease-in;
+    will-change: scale;
+}
+
+
+#arcoiris path {
+    animation: arcoirisColor steps(1) 1.2s infinite;
+    animation-play-state: paused;
+    will-change: fill;
+}
+#arcoiris:hover path {
+    animation-play-state: running
+}
+
+
+#flores g {
+    transform-box: fill-box;
+    transform-origin: center;
+    scale: 0;
+    animation: scaleRotate 4s linear forwards;
+}
+
+
+.last {
+    margin-bottom: 80vh;
+}
+
+main {
+    background-color: var(--yellow);
+    color: var(--bg-color);
+    padding: 4rem;
+    position: relative;
+}
+
+#barras {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    width: 100%;
+}
+#barras > path {
+    transform-origin: top center;
+    transform-box: fill-box;
+    animation: barrasAnim linear both;
+    animation-timeline: scroll(nearest);
+    animation-range: 10% 80%;
+    vector-effect: non-scaling-stroke;
+}
+
+.description {
+    max-width: 60ch;
+    position: relative;
+    background: var(--orange);
+    margin: 0 auto;
+    font-size: 1.8rem;
+    padding: 2rem;
+    border: 2px solid var(--bg-color);
+}
+
+.speaker {
+    border: 2px solid var(--bg-color);
+    background-color: var(--cream);
+    border-radius: 2rem;
+    margin: 2rem auto;
+    gap: 2rem;
+    padding: 2rem;
+    width: fit-content;
+    text-align: center;
+    rotate: -2deg;
+    position: sticky;
+    top: 0;
+    bottom: 100%;
+}
+.speaker img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+.speaker p {
+    max-width: 60ch;
+}
+
+.speaker:nth-child(even) {
+    rotate: 2deg;
+}
+
+
+
+.agenda {
+    background-color: var(--cream);
+    border: 1px solid var(--bg-color);
+    border-radius: 2rem;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.agenda h2 {
+    font-size: 2.5rem;
+    color: var(--green);
+    text-shadow: -1px -1px 0 var(--bg-color), 1px -1px 0 var(--bg-color), -1px 1px 0 var(--bg-color), 1px 1px 0 var(--bg-color);
+}
+.agenda ul li {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.agenda ul li .time {
+    font-family: FlowersKingdom, "Flowers Kingdom", sans-serif;
+    font-size: 1.8rem;
+    color: var(--red);
+    text-align: right;
+}
+.agenda ul li .event {
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.tickets {
+    background-color: var(--bg-color);
+    font-family: FlowersKingdom, "Flowers Kingdom", sans-serif;
+    padding: 4rem;
+    text-align: center;
+}
+
+.tickets h2 {
+    font-size: 2.5rem;
+    color: var(--green);
+    text-shadow: -1px -1px 0 var(--bg-color), 1px -1px 0 var(--bg-color), -1px 1px 0 var(--bg-color), 1px 1px 0 var(--bg-color);
+}
+.tickets p {
+    color: var(--pink);
+    font-size: 2rem;
+    margin: 1rem 0 2rem;
+}
+.tickets .btn {
+    display: inline-block;
+    margin-block-start: 2rem;
+}
+
+
+
+
+
+
+footer {
+    background-color: var(--blue);
+    color: var(--cream);
+    height: 40vh;
+    padding: 4rem;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    z-index: -1;
+}
+
+
+.social-list {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 0;
+}
+.social-list li {
+    list-style: none;
+}
+.social-list li a svg {
+    color: var(--yellow);
+    width: 30px;
+}
+
+
+.glitch {
+    position:relative;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.8rem;
+}
+.glitch span {
+    position: absolute;
+    inset: 0;
+}
+
+.glitch:hover .glitch1 {
+    animation: noiseAnim 5s linear infinite alternate-reverse;
+    text-shadow: 2px 2px var(--red);
+}
+.glitch:hover .glitch2 {
+    animation: noiseAnim 5s linear infinite alternate-reverse;
+    text-shadow: -2px -2px var(--yellow);
+}
+
+@keyframes noiseAnim {
+0% {
+    -webkit-clip-path: inset(14% 0 87% 0);
+    clip-path: inset(14% 0 87% 0);
+}
+5% {
+    -webkit-clip-path: inset(34% 0 62% 0);
+    clip-path: inset(34% 0 62% 0);
+}
+10% {
+    -webkit-clip-path: inset(77% 0 2% 0);
+    clip-path: inset(77% 0 2% 0);
+}
+15% {
+    -webkit-clip-path: inset(11% 0 30% 0);
+    clip-path: inset(11% 0 30% 0);
+}
+20% {
+    -webkit-clip-path: inset(14% 0 43% 0);
+    clip-path: inset(14% 0 43% 0);
+}
+25% {
+    -webkit-clip-path: inset(54% 0 47% 0);
+    clip-path: inset(54% 0 47% 0);
+}
+30% {
+    -webkit-clip-path: inset(2% 0 77% 0);
+    clip-path: inset(2% 0 77% 0);
+}
+35% {
+    -webkit-clip-path: inset(35% 0 14% 0);
+    clip-path: inset(35% 0 14% 0);
+}
+40% {
+    -webkit-clip-path: inset(69% 0 17% 0);
+    clip-path: inset(69% 0 17% 0);
+}
+45% {
+    -webkit-clip-path: inset(25% 0 3% 0);
+    clip-path: inset(25% 0 3% 0);
+}
+50% {
+    -webkit-clip-path: inset(28% 0 64% 0);
+    clip-path: inset(28% 0 64% 0);
+}
+55% {
+    -webkit-clip-path: inset(90% 0 5% 0);
+    clip-path: inset(90% 0 5% 0);
+}
+60% {
+    -webkit-clip-path: inset(34% 0 9% 0);
+    clip-path: inset(34% 0 9% 0);
+}
+65% {
+    -webkit-clip-path: inset(52% 0 25% 0);
+    clip-path: inset(52% 0 25% 0);
+}
+70% {
+    -webkit-clip-path: inset(26% 0 24% 0);
+    clip-path: inset(26% 0 24% 0);
+}
+75% {
+    -webkit-clip-path: inset(34% 0 3% 0);
+    clip-path: inset(34% 0 3% 0);
+}
+80% {
+    -webkit-clip-path: inset(96% 0 2% 0);
+    clip-path: inset(96% 0 2% 0);
+}
+85% {
+    -webkit-clip-path: inset(28% 0 12% 0);
+    clip-path: inset(28% 0 12% 0);
+}
+90% {
+    -webkit-clip-path: inset(26% 0 59% 0);
+    clip-path: inset(26% 0 59% 0);
+}
+95% {
+    -webkit-clip-path: inset(12% 0 57% 0);
+    clip-path: inset(12% 0 57% 0);
+}
+100% {
+    -webkit-clip-path: inset(54% 0 3% 0);
+    clip-path: inset(54% 0 3% 0);
+}
+    
+}
+
+
+.contact-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+ input {
+	 border: 3px solid white;
+	 min-height: 60px;
+}
+ input:focus {
+	 border: 3px solid var(--yellow);
+	 outline: 0;
+}
+ input#email:valid {
+	 background: white url('data:image/svg+xml,\ <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">\ <circle cx="13" cy="13" r="13" fill="%234c9153"/>\ <path fill="none" stroke="white" stroke-width="2" d="M5 15.2l5 5 10-12"/>\ </svg>') no-repeat 95% 50%;
+	 border: 3px solid var(--green);
+	 transition: background ease 0.2s;
+}
+ #contact-form {
+	 align-items: flex-end;
+	 display: flex;
+	 gap: 1rem;
+     justify-content: center;
+	 position: relative;
+     width: 100%;
+}
+ #contact-form .email-wrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+	min-width: 200px;
+    width: 100%;
+}
+ #contact-form input {
+    border-radius: 4px;
+	 box-shadow: none;
+	 font-family: inherit;
+	 font-size: 1rem;
+	 padding: 10px;
+	 width: 100%;
+}
+ #contact-form label {
+	 display: inline-block;
+	 padding: 5px 0;
+}
+ #contact-form.shake-it {
+	 animation: shake 0.05s alternate 5;
+}
+ @keyframes shake {
+	 from {
+		 transform: translateX(-10px);
+	}
+	 to {
+		 transform: translateX(10px);
+	}
+}
+
+ #contact-form .btn-send {
+    background: var(--yellow) url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 40"><circle cx="4" cy="4" r="3" fill="none" stroke="%23e69a3b"/><circle cx="4" cy="36" r="3" fill="none" stroke="%23e69a3b"/></svg>') repeat-x center;
+	 background-position: 230%;
+	 background-size: 78% 85%;
+	 border-radius: 4px;
+	 border: 2px solid var(--orange);
+	 color: var(--bg-color);
+	 cursor: pointer;
+	 display: inline-block;
+	 font-family: inherit;
+	 padding: 0 1rem;
+	 position: relative;
+	 overflow: hidden;
+	 z-index: 1;
+	 position: relative;
+	 height: 60px;
+}
+
+#contact-form .btn-send:before {
+	 content: "";
+	 position: absolute;
+	 background-color: var(--orange);
+	 height: 100%;
+	 left: 0px;
+	 top: 0;
+	 mix-blend-mode: color-burn;
+	 transition-duration: 0.6s;
+	 transform-origin: top left;
+	 transition: all 0.3s;
+	 width: 0;
+	 z-index: -1;
+}
+#contact-form .btn-send:hover:before {
+	 width: 135%;
+}
+ #contact-form .btn-send input {
+	 background-color: transparent;
+	 border: 0;
+	 cursor: pointer;
+	 font-size: 1.2rem;
+	 margin: 0;
+	 padding: 0;
+}
+ #contact-form .btn-send.activate-send {
+	 animation: jump 0.5s 0.2s linear;
+}
+ .button-wrapper {
+	 position: relative;
+}
+ .hongos {
+	 position: absolute;
+}
+ #hongomail {
+	 opacity: 0;
+}
+ #hongomail.activate-send {
+	 animation: hongofly 0.8s 0.5s linear;
+}
+ @keyframes hongofly {
+	 to {
+		 opacity: 1;
+		 transform: translateY(-180%);
+	}
+}
+ #starmail {
+	 position: absolute;
+	 top: -120%;
+	 left: -10%;
+	 z-index: 1;
+}
+ #starmail polygon {
+	 opacity: 0;
+}
+ #starmail.activate-send polygon {
+	 stroke-width: 0.5;
+	 animation: starop 1 0.7s;
+	 transform-origin: center;
+	 transform-box: fill-box;
+}
+ #starmail.activate-send #star1 {
+	 animation-delay: 0.2s;
+}
+ #starmail.activate-send #star2 {
+	 animation-delay: 0.3s;
+}
+ #starmail.activate-send #star3 {
+	 animation-delay: 0.4s;
+}
+ #starmail.activate-send #star4 {
+	 animation-delay: 0.6s;
+}
+ @keyframes starop {
+	 to {
+		 opacity: 1;
+		 transform: scale(0.6) rotate(45deg);
+	}
+}
+ .mario {
+	 position: absolute;
+	 bottom: -170%;
+	 width: 60px;
+	 left: 10px;
+	 opacity: 0;
+}
+ .mario.activate-send {
+	 animation: jump 0.7s linear;
+}
+ @keyframes jump {
+	 0% {
+		 opacity: 1;
+		 transform: translateY(0);
+	}
+	 50% {
+		 opacity: 1;
+		 transform: translateY(-50%);
+	}
+	 100% {
+		 opacity: 1;
+		 transform: translateY(0);
+	}
+}
