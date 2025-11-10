@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los hongos son mágicos</title>
+    <link rel="stylesheet" href="demo3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="imgs/logo.svg" alt="Logo">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><a href="#">Experiencias</a></li>
+                    <li><a href="#">Ubicación</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <div class="icon-placeholder">
+                    <img src="imgs/user.svg" alt="Profile">
+                </div>
+                <div class="icon-placeholder">
+                    <img src="imgs/shop.svg" alt="Cart">
+                </div>
+                <div class="icon-placeholder">
+                    <img src="imgs/heart.svg" alt="Favorites">
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <nav>
+                <ul>
+                    <li><a href="#">Ceremonias</a></li>
+                    <li><a href="#">Retiros</a></li>
+                    <li><a href="#">Guías</a></li>
+                    <li><a href="#">Preparación</a></li>
+                    <li><a href="#">Integración</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="left-content">
+            <h1><span class="splitfirst">Todos los hongos son</span> <span class="splitlast">mágicos</span></h1>
+            <p>Elige tu propio viaje interior</p>
+            <button class="explore-button">Comprar entradas</button>
+        </div>
+        <div class="right-visual">
+            <div class="image-container">
+                <img src="imgs/pic.jpg" alt="Woman sitting on a rock in a forest" class="main-image">
+            </div>
+            <!-- <div class="image-container">
+                <svg width="100%" height="100%" viewBox="0 0 800 600">
+                    <defs>
+                        <mask id="watercolor-mask">
+                            <image href="imgs/mask-pic.png" width="800" height="600" />
+                        </mask>
+                    </defs>
+                    <image href="imgs/pic.jpg" width="800" height="600" mask="url(#watercolor-mask)" />
+                </svg>
+            </div> --> 
+            <img src="imgs/herb1.png" alt="Decorative branch" class="decoration-branch">
+        
+
+    <div class="circular-text-container">
+        <div class="center-image">
+            <img src="imgs/hong2.png" alt="Hands holding small mushrooms" class="mushroom-img">
+        </div>
+
+        <svg viewBox="0 0 100 100" class="circle-svg">
+            <path id="circlePath"
+                  fill="none"
+                  d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
+            
+            <text class="rotating-text">
+                <textPath xlink:href="#circlePath" startOffset="0%">
+                    Un viaje interior con hongos • Para la conexión •
+                </textPath>
+            </text>
+        </svg>
+    </div>
+
+</div>
+    </main>
+
+</body>
+
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+<script>
+
+const split = SplitText.create('.splitfirst', {
+  type: "chars, lines",
+  mask: "lines"
+});
+const splitSpan = SplitText.create('.splitlast', {
+  type: "chars, lines",
+  mask: "lines"
+});
+
+const tween = gsap.timeline()
+  .from(split.chars, {
+    xPercent: 100,
+    stagger: 0.1,
+    opacity: 0,
+    duration: 1, 
+  })
+  .from(splitSpan.chars, {
+    yPercent: 100,
+    stagger: 0.1,
+    opacity: 0,
+    duration: 1,
+  });
+
+</script>
