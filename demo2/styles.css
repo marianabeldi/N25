@@ -112,8 +112,9 @@ main {
     font-size: 5vw;
     font-family: 'quivertregular';
     color: #5d4a3b;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 40px;
+    max-width: 8ch;
 }
 .left-content h1 .splitlast {
     color: #d07240;
